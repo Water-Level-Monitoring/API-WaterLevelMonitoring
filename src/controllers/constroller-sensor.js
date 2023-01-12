@@ -39,6 +39,7 @@ module.exports = {
                 `,
 
         function (error, results) {
+          console.log(results);
           if (error) throw error;
           res.send({
             success: true,
@@ -53,12 +54,17 @@ module.exports = {
 
   // Simpan data karyawan
   addDataSensor(req, res) {
+    var dt = require("moment")().format("YYYY-MM-DD hh:mm:ss");
     let data = {
       sensor1: req.body.sensor1,
       sensor2: req.body.sensor2,
+      waterpump1: req.body.waterpump1,
+      waterpump2: req.body.waterpump2,
+      waktu: dt,
     };
     pool.getConnection(function (err, connection) {
       if (err) throw err;
+      console.log(data);
       connection.query(
         `
                 INSERT INTO sensor SET ?;

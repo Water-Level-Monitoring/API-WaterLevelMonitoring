@@ -3,5 +3,5 @@ module.exports = {
   host: "localhost",
   user: "root",
   password: "",
-  database: "waterlevel_bene",
+  database: "waterleveldb-iot-v1",
 };
