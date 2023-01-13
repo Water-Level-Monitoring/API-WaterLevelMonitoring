@@ -1,7 +1,8 @@
 module.exports = {
   multipleStatements: true,
-  host: "localhost",
+  host: "containers-us-west-42.railway.app",
   user: "root",
-  password: "",
-  database: "waterleveldb-iot-v1",
+  password: "MaXOQJ5NXIQlZEIzZweI",
+  database: "railway",
+  port: 7422,
 };
