@@ -54,7 +54,7 @@ module.exports = {
 
   // Simpan data karyawan
   addDataSensor(req, res) {
-    var dt = require("moment")().format("YYYY-MM-DD T00:00:00.000Z"); 
+    var dt = require("moment")().format("yyyy-mm-dd T00:00:00.000Z"); 
     let data = {
       sensor1: req.body.sensor1,
       sensor2: req.body.sensor2,
