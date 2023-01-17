@@ -18,7 +18,7 @@ app.use(
   })
 );
 
-app.listen(8080, () => {
+app.listen(80, () => {
   console.log("Server Berjalan di Port : 8080");
 });
 
