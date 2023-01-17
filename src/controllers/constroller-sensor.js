@@ -6,7 +6,6 @@ pool.on("error", (err) => {
   console.error(err);
 });
 
-
 module.exports = {
   // Ambil data semua karyawan
   getDataSensor(req, res) {
@@ -54,13 +53,14 @@ module.exports = {
 
   // Simpan data karyawan
   addDataSensor(req, res) {
-    var dt = require("moment")().format("YYYY-MM-DD HH:mm:ss"); 
+    var dt = require("moment")().format("YYYY-MM-DD HH:mm:ss");
+    var datatime = dt.toString();
     let data = {
       sensor1: req.body.sensor1,
       sensor2: req.body.sensor2,
       waterpump1: req.body.waterpump1,
       waterpump2: req.body.waterpump2,
-      waktu: dt,
+      waktu: datatime,
     };
     pool.getConnection(function (err, connection) {
       if (err) throw err;
@@ -81,7 +81,7 @@ module.exports = {
       connection.release();
     });
   },
-  
+
   // Delete data karyawan
   deleteDataSensor(req, res) {
     let id = req.body.id;
